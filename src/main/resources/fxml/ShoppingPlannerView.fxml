@@ -8,8 +8,7 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.ShoppingPlannerController">
    <children>
       <SplitPane dividerPositions="0.35618729096989965" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <items>
@@ -17,17 +16,18 @@
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                      <children>
-                        <TableView prefHeight="346.0" prefWidth="210.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="shoppingListTable" prefHeight="346.0" prefWidth="210.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
-                            <TableColumn prefWidth="210.0" text="Shopping list" />
+                            <TableColumn fx:id="shoppingListProductNameColumn" prefWidth="138.0" text="Product name" />
+                              <TableColumn fx:id="shoppingListQuantityColumn" prefWidth="71.0" text="Quantity" />
                           </columns>
                         </TableView>
                      </children>
                   </AnchorPane>
                 <AnchorPane prefHeight="100.0" prefWidth="160.0">
                      <children>
-                        <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" text="Settings" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="14.0" />
-                        <Button layoutX="118.0" layoutY="11.0" mnemonicParsing="false" text="Manage list" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="14.0" />
+                        <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#onSettingsClick" text="Settings" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="14.0" />
+                        <Button layoutX="118.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#onManageListClick" text="Manage list" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="14.0" />
                      </children>
                   </AnchorPane>
               </items>
@@ -36,10 +36,10 @@
                <children>
                   <ToolBar prefHeight="25.0" prefWidth="382.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
-                      <Button mnemonicParsing="false" text="Plan route" />
+                      <Button mnemonicParsing="false" onMouseClicked="#onPlanRouteClick" text="Plan route" />
                     </items>
                   </ToolBar>
-                  <ListView layoutY="35.0" prefHeight="363.0" prefWidth="382.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0" />
+                  <ListView fx:id="shoppingListView" layoutY="35.0" prefHeight="363.0" prefWidth="382.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0" />
                </children>
             </AnchorPane>
          </items>

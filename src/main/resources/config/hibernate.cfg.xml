@@ -22,5 +22,6 @@
         <mapping class="hu.unideb.inf.domain.Product"/>
         <mapping class="hu.unideb.inf.domain.ProductToShop"/>
         <mapping class="hu.unideb.inf.domain.ShoppingItem"/>
+        <mapping class="hu.unideb.inf.domain.Setting"/>
     </session-factory>
 </hibernate-configuration>

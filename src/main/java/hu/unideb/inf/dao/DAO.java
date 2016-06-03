@@ -36,7 +36,7 @@ abstract class DAO {
      *
      * @param obj Object from the hu.unideb.inf.domain package.
      */
-    protected void createOrUpdate(Object obj) {
+    public void createOrUpdate(Object obj) {
         startTransaction();
         logger.debug("Object: " + obj.toString());
         try {
@@ -53,7 +53,7 @@ abstract class DAO {
      *
      * @param obj Object from the hu.unideb.inf.domain package.
      */
-    protected void delete(Object obj) {
+    public void delete(Object obj) {
         startTransaction();
         logger.debug("Object: " + obj.toString());
         try {
@@ -71,7 +71,7 @@ abstract class DAO {
      * @param c Object from the hu.unideb.inf.domain package.
      * @return List of the given object.
      */
-    protected List findAll(Class c) {
+    public List findAll(Class c) {
         logger.debug("Class: " + c.getSimpleName());
         List result = null;
         try {

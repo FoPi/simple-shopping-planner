@@ -9,23 +9,23 @@ public class ShoppingItem {
     @Column
     private int id;
 
-    @OneToOne
-    @PrimaryKeyJoinColumn
-    private Product product;
     @Column
-    private int quantity;
+    private String productName;
+    @Column
+    private float quantity;
 
     /**
-     * @param product {@link Product} that is needed to buy
+     * @param productName The name of the needed product
      * @param quantity Quantity of the given product that needs
      */
-    public ShoppingItem(Product product, int quantity) {
-        this.product = product;
+    public ShoppingItem(String productName, float quantity) {
+        this.productName = productName;
         this.quantity = quantity;
     }
 
     public ShoppingItem() {}
 
+    //<editor-fold desc="Setter & Getter methods">
     public int getId() {
         return id;
     }
@@ -34,19 +34,20 @@ public class ShoppingItem {
         this.id = id;
     }
 
-    public Product getProduct() {
-        return product;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public int getQuantity() {
+    public float getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(float quantity) {
         this.quantity = quantity;
     }
+    //</editor-fold>
 }

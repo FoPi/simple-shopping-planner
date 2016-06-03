@@ -19,4 +19,44 @@ public class ProductToShop {
 
     @Column
     protected double price;
+
+    public ProductToShop(Product product, Shop shop, double price) {
+        this.product = product;
+        this.shop = shop;
+        this.price = price;
+    }
+
+    public ProductToShop() {}
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public Shop getShop() {
+        return shop;
+    }
+
+    public void setShop(Shop shop) {
+        this.shop = shop;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 }
